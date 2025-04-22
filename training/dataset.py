@@ -38,7 +38,6 @@ class VQADataset(Dataset):
             entry["answer"],
             add_special_tokens=False
         ).input_ids
-
         # Build concatenated inputs and labels mask
         input_ids = q_ids + a_ids
         labels    = [-100] * len(q_ids) + a_ids
